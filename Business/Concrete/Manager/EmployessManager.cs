@@ -1,10 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstrack;
 using Business.Constants;
+using Core.Aspects.Autofac.Logging;
+using Core.CrossCuttingConcerns.Log4Net.Loggers;
 using Core.Utilities.Business;
 using Core.Utilities.Result;
 using DataAccess.Abstrack;
@@ -14,20 +16,30 @@ namespace Business.Concrete.Manager
 {
     public class EmployessManager : IEmployessService
     {
-        private IEmployessDal _employessDal;
-        public IDataResult<Employess> GetById(int employessId)
+        private readonly IEmployessDal _employessDal;
+
+        public EmployessManager(IEmployessDal employessDal)
         {
-            return new SuccessDataResult<Employess>(_employessDal.Get(p => p.EmployeeID == employessId));
+            _employessDal = employessDal;
         }
 
-        public IDataResult<List<Employess>> GetList()
+        public IDataResult<Employees> GetById(int employessId)
         {
-            return new SuccessDataResult<List<Employess>>(_employessDal.GetList().ToList());
+            return new SuccessDataResult<Employees>(_employessDal.Get(p => p.EmployeeID == employessId));
         }
 
-        public IResult Add(Employess employess)
+        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(DatabaseLogger))]
+        public IDataResult<List<Employees>> GetList()
         {
-            IResult result = BusinessRules.Run(CheckIfEmployessIdExists(employess.EmployeeID), CheckIfEmployessIsEnabled());
+            return new SuccessDataResult<List<Employees>>(_employessDal.GetList().ToList());
+        }
+
+        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(DatabaseLogger))]
+        public IResult Add(Employees employess)
+        {
+            IResult result = BusinessRules.Run(CheckIfEmployessIdExists(employess.EmployeeID));
             if (result != null)
             {
                 return result;
@@ -58,23 +70,29 @@ namespace Business.Concrete.Manager
             return new SuccessResult();
         }
 
-        public IResult Delete(Employess employess)
+        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(DatabaseLogger))]
+        public IResult Delete(Employees employess)
         {
             _employessDal.Delete(employess);
             return new SuccessResult(Messages.EmployessDeleted);
         }
 
-        public IResult Update(Employess employess)
+        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(DatabaseLogger))]
+        public IResult Update(Employees employess)
         {
             _employessDal.Update(employess);
             return new SuccessResult(Messages.EmployessUpdated);
         }
 
-        public IResult TransactionalOperation(Employess employess)
+        [LogAspect(typeof(FileLogger))]
+        [LogAspect(typeof(DatabaseLogger))]
+        public IResult TransactionalOperation(Employees employess)
         {
             _employessDal.Update(employess);
             _employessDal.Add(employess);
             return new SuccessResult(Messages.EmployessUpdated);
         }
     }
-}
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

@@ -10,12 +10,12 @@ namespace Business.Abstrack
 {
     public interface IEmployessService 
     {
-        IDataResult<Employess> GetById(int employessId);
-        IDataResult<List<Employess>> GetList();
-        IResult Add(Employess employess);
-        IResult Delete(Employess employess);
-        IResult Update(Employess employess);
+        IDataResult<Employees> GetById(int employessId);
+        IDataResult<List<Employees>> GetList();
+        IResult Add(Employees employess);
+        IResult Delete(Employees employess);
+        IResult Update(Employees employess);
 
-        IResult TransactionalOperation(Employess product);
+        IResult TransactionalOperation(Employees product);
     }
 }

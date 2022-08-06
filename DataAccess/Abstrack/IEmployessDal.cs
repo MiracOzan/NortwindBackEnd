@@ -8,7 +8,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstrack
 {
-    public interface IEmployessDal : IEntityRepository<Employess>
+    public interface IEmployessDal : IEntityRepository<Employees>
     {
     }
 }

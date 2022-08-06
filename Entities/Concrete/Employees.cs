@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net.Mime;
 using System.Text;
@@ -8,8 +9,9 @@ using Core.Entities;
 
 namespace Entities.Concrete
 {
-    public class Employess : IEntity
+    public class Employees : IEntity
     {
+        [Key]
         public int EmployeeID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }

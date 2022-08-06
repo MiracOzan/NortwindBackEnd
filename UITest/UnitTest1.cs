@@ -1,3 +1,5 @@
+using Business.Concrete.Manager;
+using DataAccess.Concrete.EntityFramework;
 using NUnit.Framework;
 
 namespace UITest
@@ -7,12 +9,15 @@ namespace UITest
         [SetUp]
         public void Setup()
         {
+            
         }
 
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            EmployessManager _employessManager = new EmployessManager(new EfEmployeesDal());
+            var result = _employessManager.GetList().Data.Count;
+            Assert.AreEqual(result,result <= 100);
         }
     }
 }
