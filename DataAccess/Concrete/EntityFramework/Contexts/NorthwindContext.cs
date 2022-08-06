@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework.Contexts
 {
@@ -12,5 +13,7 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public NorthwindContext() : base("name = conn") {
 
         }
+
+        public DbSet<Employess> Employesses { get; set; }
     }
 }
