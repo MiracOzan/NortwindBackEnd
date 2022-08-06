@@ -43,8 +43,22 @@
   <ItemGroup>
     <Compile Include="Abstrack\IEmployessService.cs" />
     <Compile Include="Concrete\Manager\EmployessManager.cs" />
+    <Compile Include="Constants\Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{2C4F67E2-656C-443D-9436-E86F97DFCD74}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{B3A7B850-C738-4B28-A792-BFC0B3AF3573}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{8DD2B589-DE91-4706-B58A-A34FF547C773}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
