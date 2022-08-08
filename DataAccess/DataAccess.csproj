@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstrack\IEmployessDal.cs" />
+    <Compile Include="Abstrack\IUsersDal.cs" />
     <Compile Include="Concrete\EntityFramework\Contexts\NorthwindContext.cs" />
     <Compile Include="Concrete\EntityFramework\EfEmployessDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

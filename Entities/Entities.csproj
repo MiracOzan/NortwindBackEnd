@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\Employees.cs" />
+    <Compile Include="Dtos\UserForRegisterDto.cs" />
+    <Compile Include="Dtos\UsersForLoginDtos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +55,9 @@
       <Project>{2C4F67E2-656C-443D-9436-E86F97DFCD74}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
