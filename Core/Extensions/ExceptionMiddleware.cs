@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
+using HttpContext = Microsoft.AspNetCore.Http.HttpContext;
 
 namespace Core.Extensions
 {

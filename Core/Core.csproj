@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=11.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.11.1.1\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
@@ -118,6 +121,7 @@
   <ItemGroup>
     <Compile Include="Aspects\Autofac\Logging\LogAspect.cs" />
     <Compile Include="Aspects\Autofac\Logging\LogDetailWithException.cs" />
+    <Compile Include="Aspects\Autofac\Validation\ValidationAspect.cs" />
     <Compile Include="CrossCuttingConcerns\Exceptions\ExceptionLogAspect.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Layouts\JsonLayout.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\LoggersServiceBase.cs" />
@@ -126,6 +130,7 @@
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\SerializableLogEvent.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogDetail.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogParameter.cs" />
+    <Compile Include="CrossCuttingConcerns\Validation\ValidationTool.cs" />
     <Compile Include="DataAccess\EntityFramework\EfEntityRepositoryBase.cs" />
     <Compile Include="DataAccess\IEntityRepository.cs" />
     <Compile Include="Entities\Concrete\OperationClaim.cs" />
