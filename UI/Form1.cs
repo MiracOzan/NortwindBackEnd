@@ -7,14 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Abstract;
+using Business.Concrete.Manager;
+using Core.CrossCuttingConcerns.Log4Net.Loggers;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Dtos;
 
 namespace UI
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(IAuthService authService)
         {
+           
             InitializeComponent();
+        }
+
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

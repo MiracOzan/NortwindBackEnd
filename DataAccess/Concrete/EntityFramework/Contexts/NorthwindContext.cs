@@ -4,6 +4,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Entities.Concrete;
+using Entities.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework.Contexts
 {
@@ -12,5 +14,10 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         public NorthwindContext() : base("name = conn") {
 
         }
+
+        public DbSet<Employees> Employees { get; set; }
+        public DbSet<OperationClaim> OperationClaims { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
     }
 }
