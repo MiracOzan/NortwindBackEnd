@@ -7,15 +7,15 @@ using Castle.Core.Configuration;
 using Core.Entities.Concrete;
 using Core.Extensions;
 using Core.Utilities.Security.Encyption;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Core.Utilities.Security.Jwt
 {
     public class JwtHelper:ITokenHelper
     {
         public IConfiguration Configuration { get; }
-        private readonly TokenOptions _tokenOptions;
+        private TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
         public JwtHelper(IConfiguration configuration)
         {
