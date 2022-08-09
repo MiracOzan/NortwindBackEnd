@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
-using Castle.Core.Configuration;
 using Core.Entities.Concrete;
 using Core.Extensions;
 using Core.Utilities.Security.Encyption;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Core.Utilities.Security.Jwt
 {
