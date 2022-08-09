@@ -7,7 +7,7 @@ using Business.Abstrack;
 
 namespace WebApi.Controllers
 {
-    [Route("api/[Employess]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class EmployesController : Controller
     {

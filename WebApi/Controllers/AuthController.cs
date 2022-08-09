@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/[Auth]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AuthController:Controller
     {
