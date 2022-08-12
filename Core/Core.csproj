@@ -153,6 +153,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aspects\Autofac\Exception\ExceptionLogAspect.cs" />
     <Compile Include="Aspects\Autofac\Logging\LogAspect.cs" />
     <Compile Include="Aspects\Autofac\Logging\LogDetailWithException.cs" />
     <Compile Include="Aspects\Autofac\Validation\ValidationAspect.cs" />

@@ -10,9 +10,9 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController:Controller
+    public class AuthController : Controller
     {
-        private IAuthService _authService;
+        public IAuthService _authService;
 
         public AuthController(IAuthService authService)
         {
@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("login")]
-        public ActionResult Login(UserForLoginDto userForLoginDto)
+        public ActionResult Login([FromQuery]UserForLoginDto userForLoginDto)
         {
             var userToLogin = _authService.Login(userForLoginDto);
             if (!userToLogin.Success)
