@@ -1,19 +1,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomeComponents from './components/HomeComponents.js';
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
-import EmployeesComponents from './components/EmployeesComponents';
-import Employees from './Models/Employees';
-import LoginComponentts from './components/LoginComponentts';
-import {Routes} from 'react-router-dom';
-import RegisterComponents from './components/RegisterComponents';
+import LoginComponents from './components/LoginComponents/LoginComponents.js';
 
 
 function App() {
 
   return (
     <div>
-
+      <LoginComponents></LoginComponents>
     </div>
   );
 }
