@@ -15,12 +15,12 @@ namespace Business.Constants
         public static string EmployessDeleted = "Çalışan Silindi";
         public static string EmployessUpdated = "Çalışan Bilgileri Güncellendi";
 
-        public static string AuthorizationDenied = "Yetkisiz Giriş";
-        public static string UserRegistered = "Kayıtlı Kullanıcı";
-        public static string UserNotFound = "Kullanıcı Bulunulamadı";
-        public static string PasswordError = "Şifre Hatası";
-        public static string SuccessfulLogin = "Giriş Başarılı";
-        public static string UserAlreadyExists = "Bu Kullanıcı Kayıtlıdır";
-        public static string AccessTokenCreated = "Erişim Anahtarı Hazırlandı";
+        public static string AuthorizationDenied { get; internal set; }
+        public static string UserRegistered { get; internal set; }
+        public static User UserNotFound { get; internal set; }
+        public static User PasswordError { get; internal set; }
+        public static string SuccessfulLogin { get; internal set; }
+        public static string UserAlreadyExists { get; internal set; }
+        public static string AccessTokenCreated { get; internal set; }
     }
 }

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstrack;
-using Business.BusinessAspect.AutoFact;
 using Business.Constants;
 using Core.Aspects.Autofac.Logging;
 using Core.CrossCuttingConcerns.Log4Net.Loggers;
@@ -31,7 +30,6 @@ namespace Business.Concrete.Manager
 
         [LogAspect(typeof(FileLogger))]
         [LogAspect(typeof(DatabaseLogger))]
-        [SecuredOperation("Admin")]
         public IDataResult<List<Employees>> GetList()
         {
             return new SuccessDataResult<List<Employees>>(_employessDal.GetList().ToList());

@@ -11,19 +11,13 @@ namespace WebApi.Controllers
     [ApiController]
     public class EmployesController : Controller
     {
-        private IEmployessService _employessService; 
-
-        public EmployesController(IEmployessService employessService)
-        {
-            _employessService = employessService;
-        }
-
+        private IEmployessService _employessService;
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet("getall")]
         public IActionResult GetList()
         {
 

@@ -4,9 +4,8 @@ using System.Text;
 using Business.Abstrack;
 using Business.Abstract;
 using Business.Constants;
-using Core.Aspects.Autofac.Logging;
-using Core.CrossCuttingConcerns.Log4Net.Loggers;
 using Core.Entities.Concrete;
+using Core.Utilities.Result;
 using Core.Utilities.Result;
 using Core.Utilities.Security.Hashing;
 using Core.Utilities.Security.Jwt;
@@ -25,8 +24,6 @@ namespace Business.Concrete
             _tokenHelper = tokenHelper;
         }
 
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
         {
             byte[] passwordHash, passwordSalt;
@@ -44,8 +41,6 @@ namespace Business.Concrete
             return  new SuccessDataResult<User>(user,Messages.UserRegistered);
         }
 
-        [LogAspect(typeof(DatabaseLogger))]
-        [LogAspect(typeof(FileLogger))]
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
             var userToCheck = _userService.GetByMail(userForLoginDto.Email);

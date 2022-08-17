@@ -6,8 +6,6 @@ namespace Core.Utilities.Security.Jwt
 {
     public class TokenOptions
     {
-
-        public int Id { get; set; }
         public string Audience { get; set; }
         public string Issuer { get; set; }
         public int AccessTokenExpiration { get; set; }
